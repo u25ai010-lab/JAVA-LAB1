@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Gas_mileage
+{
+    public static void main(String []args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter -1 to stop:");
+        System.out.println("Number of miles: ");
+        double mile = scanner.nextInt();
+        System.out.println("Litres per Gallon: ");
+        double gallon = scanner.nextInt();
+
+        while(mile != -1 && gallon != -1)
+        {
+            System.out.println("Gallon per mile: "+ gallon / mile);
+            System.out.println("Number of miles: ");
+            mile = scanner.nextInt();
+            System.out.println("Litres per Gallon: ");
+            gallon = scanner.nextInt();
+        }
+    }
+}
