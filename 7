@@ -1,0 +1,30 @@
+class drive_cost
+{
+    float total_miles;
+    float cost_per_gallon;
+    float avg_fees;
+    float tolls;
+    double daily_cost()
+    {
+        return total_miles*cost_per_gallon + avg_fees + tolls;
+    }
+    drive_cost(float total_miles,float cost_per_gallon, float avg_fees , float tolls)
+    {
+        this.total_miles = total_miles;
+        this.cost_per_gallon = cost_per_gallon;
+        this.avg_fees = avg_fees;
+        this.tolls = tolls;
+    }
+
+}
+
+public class driving_cost
+{
+    public static void main(String []args)
+    {
+       drive_cost dc = new drive_cost(5f , 200f , 100f , 50f);
+       double cost = dc.daily_cost();
+       System.out.println("The daily cost is " + cost);
+
+    }
+}
