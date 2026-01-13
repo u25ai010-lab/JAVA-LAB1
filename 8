@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+class invoice
+{
+    String part_num;
+    String part_desc;
+    int quantity;
+    double price;
+
+    invoice(String part_num, String part_desc, int quantity, double price)
+    {
+        this.part_num = part_num;
+        this.part_desc = part_desc;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    double total()
+    {
+        return quantity * price;
+    }
+}
+
+public class Hardware_Store
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter part number: ");
+        String part_num = scanner.next();
+
+        System.out.print("Enter part description: ");
+        String part_desc = scanner.next();
+
+        System.out.print("Enter quantity: ");
+        int quantity = scanner.nextInt();
+
+        System.out.print("Enter price per item: ");
+        double price = scanner.nextDouble();
+
+        invoice inv = new invoice(part_num, part_desc, quantity, price);
+
+        double total = inv.total();
+
+        System.out.println("\n----- Invoice -----");
+        System.out.println("Part Number: " + part_num);
+        System.out.println("Description: " + part_desc);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Price per item: " + price);
+        System.out.println("Total Amount: " + total);
+
+        scanner.close();
+    }
+}
