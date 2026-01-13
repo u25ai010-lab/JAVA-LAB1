@@ -1,0 +1,50 @@
+import java.util.Scanner;
+public class Garage {
+
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the number of hours(-1 to end the day) :");
+        int hours = scanner.nextInt();
+        double sum  = 0;
+        double fees;
+        while(hours != -1)
+        {
+            double charge = charges(hours);
+            sum = sum + charge;
+
+            System.out.println("Enter the number of hours(-1 to end the day) :");
+            hours = scanner.nextInt();
+        }
+
+        System.out.println("Total earning of day" + sum);
+
+    }
+    static double charges(int hours)
+    {
+        double fees = 0;
+        if(hours <= 3)
+        {
+            fees = 2;
+            System.out.println("Fees = " + fees);
+        }
+        else if( hours > 3 && hours <= 24)
+        {
+            fees = (2+ 0.5*hours) ;
+            System.out.println("Fees = " + fees);
+        }
+        else if(hours == 24)
+        {
+            fees = 10;
+            System.out.println("Fees = " + fees);
+        }
+
+        else
+        {
+            System.out.println("Not Available");
+        }
+
+        return fees;
+    }
+}
