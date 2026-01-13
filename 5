@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class reverse {
+    public static void main (String []args) {
+        int num, digit , temp=0;
+        Scanner scanner =new Scanner(System.in);
+        System.out.println("Enter 5 digit Number : ");
+        num = scanner.nextInt();
+        for(int i=0 ; i<5; i++){
+            digit= num%10;
+            temp=(temp*10) +digit ;
+            num=num/10;
+        }
+        for(int i=0 ; i<5; i++){
+            digit = temp %10;
+            temp =temp /10;
+            System.out.print(digit+"  ");
+        }
+    }
+}
+
+    
