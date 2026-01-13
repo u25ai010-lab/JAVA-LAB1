@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+class date{
+
+    int month;
+    int day;
+    int year;
+
+    public int getDay() {
+        return day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+}
+
+public class DateTest {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the day");
+        int day = scanner.nextInt();
+        System.out.println("Enter the month");
+        int month = scanner.nextInt();
+        System.out.println("Enter the year");
+        int year = scanner.nextInt();
+
+        displayDate(day, month, year);
+
+    }
+    static void displayDate(int day, int month, int year)
+    {
+        System.out.println(day+"/" + month + "/" + year);
+    }
+
+}
+
