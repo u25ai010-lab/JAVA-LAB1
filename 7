@@ -1,30 +1,49 @@
+import java.util.Scanner;
+
 class drive_cost
 {
     float total_miles;
     float cost_per_gallon;
     float avg_fees;
     float tolls;
+
     double daily_cost()
     {
-        return total_miles*cost_per_gallon + avg_fees + tolls;
+        return total_miles * cost_per_gallon + avg_fees + tolls;
     }
-    drive_cost(float total_miles,float cost_per_gallon, float avg_fees , float tolls)
+
+    drive_cost(float total_miles, float cost_per_gallon, float avg_fees, float tolls)
     {
         this.total_miles = total_miles;
         this.cost_per_gallon = cost_per_gallon;
         this.avg_fees = avg_fees;
         this.tolls = tolls;
     }
-
 }
 
 public class driving_cost
 {
     public static void main(String []args)
     {
-       drive_cost dc = new drive_cost(5f , 200f , 100f , 50f);
-       double cost = dc.daily_cost();
-       System.out.println("The daily cost is " + cost);
+        Scanner sc = new Scanner(System.in);
 
+        System.out.print("Enter total miles driven per day: ");
+        float miles = sc.nextFloat();
+
+        System.out.print("Enter cost per gallon: ");
+        float cost = sc.nextFloat();
+
+        System.out.print("Enter average parking fees per day: ");
+        float fees = sc.nextFloat();
+
+        System.out.print("Enter tolls per day: ");
+        float tolls = sc.nextFloat();
+
+        drive_cost dc = new drive_cost(miles, cost, fees, tolls);
+
+        double dailyCost = dc.daily_cost();
+        System.out.println("\nThe daily cost is: " + dailyCost);
+
+        sc.close();
     }
 }
