@@ -1,0 +1,55 @@
+    import java.util.Scanner;
+    class Figure
+    {
+
+            double r;
+            double a;
+            double v;
+
+            public void dispArea()
+            {
+                System.out.println(a);
+            }
+
+            public void dispVolume()
+            {
+                System.out.println(v);
+            }
+    }
+    class Cone extends Figure
+    {
+
+        double h;
+        double s;
+
+        public  void calcArea()
+        {
+            a = (Math.PI * r * s) + (Math.PI * r * r);
+        }
+
+        public void calcVolume()
+        {
+            v = (Math.PI * r * r * h) / 3;
+        }
+
+    }
+
+    class InheritanceDemo
+    {
+        public static void  main(String []args)
+        {
+            Cone cone = new Cone();
+
+            cone.r = 7;
+            cone.s = 12;
+            cone.h = 10;
+
+            cone.calcArea();
+            cone.calcVolume();
+
+            cone.dispArea();
+            cone.dispVolume();
+        }
+    }
+
+
