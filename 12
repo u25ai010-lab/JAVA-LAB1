@@ -19,10 +19,8 @@ public class CreditLimitCalculator {
         System.out.print("Enter credit limit: ");
         int creditLimit = sc.nextInt();
 
-        // Calculate new balance
         int newBalance = beginningBalance + totalCharges - totalCredits;
 
-        // Display results
         System.out.println("\nAccount Number: " + accountNumber);
         System.out.println("New Balance: " + newBalance);
 
